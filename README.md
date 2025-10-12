@@ -34,7 +34,7 @@ psp-reto2/
 
 ### 📘 Fichas de trabajo
 1. [Ficha 1 – Introducción a Node.js y Express](./Fichas/Ficha1_Introduccion_Node_Express.pdf)
-2. [Ficha 2 – Rutas en Express](./Fichas/Ficha2_Rutas_Express.pdf)
+2. [Ficha 2 – Rutas en Express](./Fichas/Ficha2_Rutas_y_Respuestas_Express.pdf)
 
 
 *(Se irán añadiendo nuevas fichas y ejercicios a medida que avance el reto.)*
