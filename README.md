@@ -34,7 +34,8 @@ psp-reto2/
 
 ## 📘 Fichas de trabajo
 
-1. 1. [Ficha 1 – Introducción a Node.js y Express](./Fichas/Ficha1_Introduccion_Node_Express.pdf)
+1. [Ficha 1 – Introducción a Node.js y Express](./Fichas/Ficha1_Introduccion_Node_Express.pdf)
+
 
 
 
