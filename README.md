@@ -7,7 +7,6 @@ Aquí encontrarás toda la documentación, fichas de trabajo y ejercicios práct
 ---
 
 ## 📂 Estructura del repositorio
-
 psp-reto2/
 │
 ├── Fichas/
@@ -41,7 +40,7 @@ psp-reto2/
 
 ## 👩‍🏫 Autora
 
-**Mapicid**  
+**Maripi Del Cid**  
 Formadora del módulo de *Programación de Servicios y Procesos (PSP)*  
 Centro: **CEBANC**  
 📅 Curso 2025–2026
