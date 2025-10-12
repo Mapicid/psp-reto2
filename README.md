@@ -36,6 +36,7 @@ psp-reto2/
 
 1. [Ficha 1 – Introducción a Node.js y Express](Fichas/Ficha1_Introduccion_Node_Express.pdf)
 
+
 *(Se irán añadiendo nuevas fichas y ejercicios a medida que avance el reto.)*
 
 ---
