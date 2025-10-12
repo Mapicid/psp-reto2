@@ -7,17 +7,19 @@ Aquí encontrarás toda la documentación, fichas de trabajo y ejercicios práct
 ---
 
 ## 📂 Estructura del repositorio
+```
 psp-reto2/
 │
 ├── Fichas/
-│ ├── Ficha1_Introduccion_Node_Express.pdf
-│ └── (otras fichas aquí)
+│   ├── Ficha1_Introduccion_Node_Express.pdf
+│   └── (otras fichas aquí)
 │
 ├── Ejercicios/
-│ ├── Ejercicio1_ServidorExpress/
-│ └── Ejercicio2_API_REST/
+│   ├── Ejercicio1_ServidorExpress/
+│   └── Ejercicio2_API_REST/
 │
 └── README.md
+```
 ---
 
 ## 🧭 Objetivos del reto
