@@ -19,7 +19,7 @@ Aprender a recibir información desde la URL y personalizar respuestas en Expres
 ## 💡 Pistas
 - Usa `req.params` y `req.query` para acceder a los datos enviados en la URL.  
 - Puedes enviar respuestas con `res.send()` o `res.json()`.  
-- Comprueba en el navegador o en Postman que las rutas funcionan correctamente.
+- Comprueba en el navegador que las rutas funcionan correctamente.
 
 ---
 
