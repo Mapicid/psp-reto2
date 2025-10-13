@@ -8,14 +8,14 @@ const PORT = 3000;
 // Ruta con parámetro: /saludo/:nombre
 app.get('/saludo/:nombre', (req, res) => {
   const nombre = req.params.nombre;
-  res.send(`👋 ¡Hola, ${nombre}! Bienvenido al servidor Express.`);
+  res.send(`¡Hola, ${nombre}! Bienvenido al servidor Express.`);
 });
 
 // Ruta con parámetro numérico: /cuadrado/:numero
 app.get('/cuadrado/:numero', (req, res) => {
   const numero = Number(req.params.numero);
   if (isNaN(numero)) {
-    return res.send('⚠️ Debes introducir un número válido.');
+    return res.send(' Debes introducir un número válido.');
   }
   const resultado = numero ** 2;
   res.send(`📐 El cuadrado de ${numero} es ${resultado}.`);
@@ -25,10 +25,10 @@ app.get('/cuadrado/:numero', (req, res) => {
 app.get('/buscar', (req, res) => {
   const { producto, precio } = req.query;
   if (!producto || !precio) {
-    return res.send('⚠️ Faltan parámetros en la búsqueda.');
+    return res.send('Faltan parámetros en la búsqueda.');
   }
   res.json({
-    mensaje: '🔍 Resultado de la búsqueda:',
+    mensaje: ' Resultado de la búsqueda:',
     producto,
     precio: Number(precio)
   });
@@ -36,5 +36,5 @@ app.get('/buscar', (req, res) => {
 
 // Inicio del servidor
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor Express escuchando en http://localhost:${PORT}`);
+  console.log(`Servidor Express escuchando en http://localhost:${PORT}`);
 });
