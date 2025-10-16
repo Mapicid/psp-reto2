@@ -1,40 +1,49 @@
-// ejemplo3_parametros.js
 // Ejemplo de uso de parámetros y query strings en Express
 
+// ejemplo3_parametros.js
 const express = require('express');
 const app = express();
 const PORT = 3000;
 
-// Ruta con parámetro: /saludo/:nombre
+// 1️⃣ Ruta con parámetro de ruta
 app.get('/saludo/:nombre', (req, res) => {
   const nombre = req.params.nombre;
-  res.send(`¡Hola, ${nombre}! Bienvenido al servidor Express.`);
+  res.send(`Hola ${nombre}, ¡bienvenido al servidor Express!`);
 });
 
-// Ruta con parámetro numérico: /cuadrado/:numero
+// 2️⃣ Ruta con número en la URL
 app.get('/cuadrado/:numero', (req, res) => {
   const numero = Number(req.params.numero);
   if (isNaN(numero)) {
-    return res.send(' Debes introducir un número válido.');
+    res.status(400).send('Error: el valor debe ser un número');
+  } else {
+    res.send(`El cuadrado de ${numero} es ${numero ** 2}`);
   }
-  const resultado = numero ** 2;
-  res.send(`📐 El cuadrado de ${numero} es ${resultado}.`);
 });
 
-// Ruta con query string: /buscar?producto=teclado&precio=25
+// 3️⃣ Ruta con query strings
 app.get('/buscar', (req, res) => {
   const { producto, precio } = req.query;
   if (!producto || !precio) {
-    return res.send('Faltan parámetros en la búsqueda.');
+    res.status(400).send('Faltan parámetros: producto y precio');
+  } else {
+    res.send(`Buscando ${producto} con precio ${precio}€`);
   }
-  res.json({
-    mensaje: ' Resultado de la búsqueda:',
-    producto,
-    precio: Number(precio)
-  });
 });
 
-// Inicio del servidor
+// 4️⃣ Página de inicio con enlaces de prueba
+app.get('/', (req, res) => {
+  res.send(`
+    <h2>Servidor de Ejemplo</h2>
+    <ul>
+      <li><a href="/saludo/Ana">/saludo/:nombre</a></li>
+      <li><a href="/cuadrado/5">/cuadrado/:numero</a></li>
+      <li><a href="/buscar?producto=teclado&precio=25">/buscar?producto=&precio=</a></li>
+    </ul>
+  `);
+});
+
+// Arranque del servidor
 app.listen(PORT, () => {
-  console.log(`Servidor Express escuchando en http://localhost:${PORT}`);
+  console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
