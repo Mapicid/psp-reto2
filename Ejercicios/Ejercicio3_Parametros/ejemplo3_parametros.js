@@ -32,16 +32,19 @@ app.get('/buscar', (req, res) => {
 });
 
 // 4️⃣ Página de inicio con enlaces de prueba
+/*
 app.get('/', (req, res) => {
   res.send(`
     <h2>Servidor de Ejemplo</h2>
     <ul>
-      <li><a href="/saludo/Ana">/saludo/:nombre</a></li>
+      <li><a href="/saludo/Ane">/saludo/:nombre</a></li>
       <li><a href="/cuadrado/5">/cuadrado/:numero</a></li>
       <li><a href="/buscar?producto=teclado&precio=25">/buscar?producto=&precio=</a></li>
     </ul>
   `);
 });
+*/
+
 
 // Arranque del servidor
 app.listen(PORT, () => {
