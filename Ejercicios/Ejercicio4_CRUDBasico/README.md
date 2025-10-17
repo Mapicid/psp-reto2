@@ -1,4 +1,4 @@
-# 🧠 Ejercicio 4 – CRUD Básico con Express
+# 🧩 Ejercicio 4 – CRUD Básico con Express
 
 ## 🎯 Objetivo
 Aprender a crear una API REST sencilla que permita realizar operaciones **CRUD** (Crear, Leer, Actualizar y Borrar) sobre una lista de usuarios almacenada en memoria (sin base de datos).
@@ -38,13 +38,4 @@ El servidor deberá permitir consultar, añadir, modificar y eliminar usuarios u
     { id: 1, nombre: "María", email: "maria@mail.com", edad: 30 },
     { id: 2, nombre: "Juan", email: "juan@mail.com", edad: 25 }
   ];
-Usa res.json() para enviar respuestas en formato JSON.
 
-Utiliza app.use(express.json()) para poder procesar los datos enviados por POST y PUT.
-
-🧩 Nivel avanzado (opcional)
-Añadir validación de datos (por ejemplo, no permitir nombres vacíos o edades negativas).
-
-Implementar un sistema de IDs automáticos.
-
-Devolver mensajes de error personalizados con códigos HTTP.
