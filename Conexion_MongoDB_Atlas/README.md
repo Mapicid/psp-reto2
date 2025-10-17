@@ -2,7 +2,7 @@
 
 Este proyecto conecta una API de **Node.js + Express** con **MongoDB Atlas** usando **Mongoose**. Incluye las operaciones CRUD sobre la colección `usuarios`.
 
-> **Nota importante**: no subas tu fichero `.env` a GitHub. Usa el `.env.example` como plantilla.
+> Video Introducción a MongoDb --> https://www.youtube.com/watch?v=-bt_y4Loofg
 
 ---
 
