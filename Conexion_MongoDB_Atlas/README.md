@@ -11,12 +11,12 @@ Este proyecto conecta una API de **Node.js + Express** con **MongoDB Atlas** usa
 1. Crea un **cluster Free (M0)** en Atlas.
 2. En **Security → Network Access**, añade **Allow access from anywhere (0.0.0.0/0)**.
 3. En **Security → Database Access**, crea el usuario de base de datos (por ejemplo):
-   - Usuario: `mpdelcid`
-   - Contraseña: `296y.53Y`
+   - Usuario: `tu_usuario`
+   - Contraseña: `tu_contraseña`
 
 4. En el panel del cluster, pulsa **Connect → Connect your application** y copia la cadena de conexión (p. ej.):
    ```
-   mongodb+srv://mpdelcid:296y.53Y@cluster0.zggmpkg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+   mongodb+srv://tu_usuario:tu_contraseñaY@cluster0.zggmpkg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
    ```
 
 ---
@@ -46,7 +46,7 @@ Estructura sugerida:
 Crea **.env** (no se sube al repo) tomando como ejemplo `.env.example`:
 
 ```env
-MONGODB_URI=mongodb+srv://mpdelcid:296y.53Y@cluster0.zggmpkg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+MONGODB_URI=mongodb+srv://tu_usuario:tu_contraseñaY@cluster0.zggmpkg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 PORT=3000
 ```
 
@@ -147,4 +147,4 @@ Servidor escuchando en http://localhost:3000
 ---
 
 **Reto 2 – PSP (Programación de Servicios y Procesos)**  
-**Autora:** María Pía del Cid
+
