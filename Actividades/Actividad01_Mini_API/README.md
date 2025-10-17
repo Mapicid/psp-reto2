@@ -11,7 +11,7 @@ http://localhost:3000/saludo/Ane/40
 
 📤 Respuesta esperada (texto plano):
 
-Hola Ane tienes 40 años, ¡bienvenido al servidor Express!
+Hola Ane tienes 40 años, ¡Te doy la bienvenida al servidor Express!
 
 2️⃣ Ruta /operacion/:a/:b
 
