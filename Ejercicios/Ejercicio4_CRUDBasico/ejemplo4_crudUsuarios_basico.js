@@ -41,6 +41,14 @@ app.post('/usuarios', (req, res) => {
   res.status(201).send("Usuario añadido correctamente");
 });
 
+//{
+  "id": 3,
+  "nombre": "Lucía",
+  "email": "lucia@mail.com",
+  "edad": 22
+}
+//
+
 // 4️⃣ Actualizar un usuario existente
 app.put('/usuarios/:id', (req, res) => {
   const id = parseInt(req.params.id);
