@@ -114,8 +114,6 @@ app.listen(port, () => console.log(`Servidor escuchando en http://localhost:${po
 ## ▶️ 5) Inicializar el proyeto, Instalar dependencias y  Ejecutar y probar
 
 ```bash
-npm init -y
-npm install express mongoose dotenv
 node server.js
 ```
 
