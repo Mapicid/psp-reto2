@@ -220,3 +220,18 @@ U → Update (PUT)
 D → Delete (DELETE)
 
 Extra (opcional): Agrega validación de campos (por ejemplo, verificar formato de correo) o un contador de documentos para mostrar cuántos usuarios hay en la base de datos.
+
+## Ejecución del proyecto
+# Inicializa npm
+npm init -y
+
+# Instala las dependencias necesarias
+npm install express mongodb dotenv cors
+
+# Crea el archivo .env con tus credenciales de MongoDB Atlas
+# (usa tus datos reales de conexión)
+MONGODB_URI=mongodb+srv://usuario:contraseña@cluster0.mongodb.net/psp_reto2?retryWrites=true&w=majority
+PORT=3000
+
+# Ejecuta el servidor
+node server.js
