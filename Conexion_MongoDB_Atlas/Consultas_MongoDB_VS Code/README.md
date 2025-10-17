@@ -36,7 +36,8 @@ Permite ejecutar consultas directamente en archivos `.mongodb` sin usar Compass 
 3. Elige “Connect with Connection String”
 4. Pega tu URI (la misma que usarías en tu archivo .env), por ejemplo:
    mongodb+srv://tu_usuario:tu_password@cluster0.zggmpkg.mongodb.net/psp_reto2?retryWrites=true&w=majority&appName=Cluster0
-5. Verás tu cluster y base de datos en la barra lateral izquierda de VS Code.
+
+6. Verás tu cluster y base de datos en la barra lateral izquierda de VS Code.
 
 ---
 
