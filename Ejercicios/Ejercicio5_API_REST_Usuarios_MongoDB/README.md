@@ -21,27 +21,24 @@ tu-proyecto/
 ## ⚙️ Paso 1. Configurar entorno y dependencias
 
 1. Crea una carpeta para el proyecto y entra en ella:
-
    mkdir API_MongoDB
    cd API_MongoDB
 
 2. Inicializa npm y añade las dependencias necesarias:
-
    npm init -y
    npm i express mongodb dotenv cors
 
-3. Crea un archivo `.env` con el siguiente contenido (usa tus propios datos de Atlas):
-
+3. Crea un archivo .env con el siguiente contenido (usa tus propios datos de Atlas):
    MONGODB_URI=mongodb+srv://<usuario>:<password>@<cluster>.mongodb.net/psp_reto2?retryWrites=true&w=majority
    PORT=3000
 
-💡 Consejo: Si trabajas con la base de datos `psp_reto2` y la colección `usuarios`, puedes reutilizar el URI que te haya proporcionado el profesor.
+💡 Consejo: Si trabajas con la base de datos psp_reto2 y la colección usuarios, puedes reutilizar el URI que te haya proporcionado el profesor.
 
 ---
 
 ## 🖥️ Paso 2. Código principal (server.js)
 
-Copia este código en `server.js`:
+Copia este código en server.js:
 
 // server.js
 // API REST básica con Express + MongoDB Atlas (colección: usuarios)
@@ -76,7 +73,7 @@ async function start() {
       await usuarios.insertMany([
         { nombre: 'jon', correo: 'jon@correo.com' },
         { nombre: 'iker', correo: 'iker@correo.com' },
-        { nombre: 'ana', correo: 'ana@correo.com' },
+        { nombre: 'ana', correo: 'ana@correo.com' }
       ]);
       console.log('✅ Colección inicializada con 3 usuarios');
     }
@@ -84,7 +81,6 @@ async function start() {
     app.listen(PORT, () => {
       console.log(`🚀 Servidor en marcha: http://localhost:${PORT}`);
     });
-
   } catch (error) {
     console.error('❌ Error al conectar con MongoDB:', error);
     process.exit(1);
@@ -165,38 +161,36 @@ start();
 ## 🚀 Paso 3. Ejecutar la API
 
 Inicia el servidor con:
-
 node server.js
 
 Verás algo como:
-
-✅ Colección inicializada con 3 usuarios  
+✅ Colección inicializada con 3 usuarios
 🚀 Servidor en marcha: http://localhost:3000
 
 ---
 
 ## 🧪 Paso 4. Probar la API con Thunder Client (VS Code)
 
-Abre **Thunder Client** (icono del rayo en VS Code).  
-Crea una nueva colección llamada **API MongoDB**.  
+Abre Thunder Client (icono del rayo en VS Code).
+Crea una nueva colección llamada API MongoDB.
 Añade las siguientes peticiones:
 
-Método | Ruta | Descripción | Ejemplo de body  
---------|------|-------------|----------------  
-GET | http://localhost:3000/api/usuarios | Lista todos los usuarios | —  
-POST | http://localhost:3000/api/usuarios | Crea un nuevo usuario | { "nombre": "maria", "correo": "maria@correo.com" }  
-GET | http://localhost:3000/api/usuarios/:id | Consulta un usuario por ID | —  
-PUT | http://localhost:3000/api/usuarios/:id | Actualiza nombre o correo | { "correo": "nuevo@correo.com" }  
-DELETE | http://localhost:3000/api/usuarios/:id | Elimina un usuario | —  
+Método | Ruta | Descripción | Ejemplo de body
+-----|------|-------------|----------------
+GET | http://localhost:3000/api/usuarios | Lista todos los usuarios | —
+POST | http://localhost:3000/api/usuarios | Crea un nuevo usuario | { "nombre": "maria", "correo": "maria@correo.com" }
+GET | http://localhost:3000/api/usuarios/:id | Consulta un usuario por ID | —
+PUT | http://localhost:3000/api/usuarios/:id | Actualiza nombre o correo | { "correo": "nuevo@correo.com" }
+DELETE | http://localhost:3000/api/usuarios/:id | Elimina un usuario | —
 
-💡 Consejo: Para probar las rutas con `:id`, copia el `_id` de uno de los usuarios devueltos por el **GET inicial**.
+💡 Consejo: Para probar las rutas con :id, copia el _id de uno de los usuarios devueltos por el GET inicial.
 
 ---
 
 ## 🧩 Alternativa: probar desde MongoDB Atlas Playground
 
-Abre **Playground** en Atlas.  
-Conecta al cluster que contiene `psp_reto2`.  
+Abre Playground en Atlas.
+Conecta al cluster que contiene psp_reto2.
 Ejecuta consultas directamente, por ejemplo:
 
 // Mostrar todos los usuarios
@@ -215,14 +209,12 @@ db.usuarios.deleteOne({ nombre: "iker" })
 
 ## 🧠 Reflexión final
 
-Este ejemplo muestra cómo una **API REST** se comunica con una base de datos **NoSQL (MongoDB)** usando **Express**.
+Este ejemplo muestra cómo una API REST se comunica con una base de datos NoSQL (MongoDB) usando Express.
 
 Cada ruta corresponde a una operación CRUD:
-
-C → Create (POST)  
-R → Read (GET)  
-U → Update (PUT)  
+C → Create (POST)
+R → Read (GET)
+U → Update (PUT)
 D → Delete (DELETE)
 
-✨ Extra (opcional): Agrega validación de campos (por ejemplo, verificar formato de correo) o un contador de documentos para mostrar cuántos usuarios hay en la base de datos.
-
+Extra (opcional): Agrega validación de campos (por ejemplo, verificar formato de correo) o un contador de documentos para mostrar cuántos usuarios hay en la base de datos.
