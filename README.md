@@ -41,7 +41,7 @@ psp-reto2/
 5. [**Ficha 4 – El objeto req en Express y las partes de una petición HTTP**](./Fichas/Ficha4_Objeto_req_Express.pdf)
 
 ## 🧩 Actividades prácticas
-- [Actividad 01 – MiniAPI CRUD sin base de datos](./Actividades/Actividad01_MiniAPI/README.md)
+- [Actividad 01 – MiniAPI CRUD sin base de datos](./Actividades/Actividad01_Mini_API/README.md)
 
 
 *(Se irán añadiendo nuevas fichas y ejercicios a medida que avance el reto.)*
