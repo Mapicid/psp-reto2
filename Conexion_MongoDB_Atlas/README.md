@@ -30,13 +30,12 @@ npm install express mongoose dotenv
 
 Estructura sugerida:
 ```
-.
-├─ src/
-│  └─ server.js
-├─ .env              # (NO subir a GitHub)
-├─ .env.example      # plantilla para el equipo
-├─ .gitignore
-└─ package.json
+crud_mongo_atlas_project/
+├── node_modules/
+├── .env
+├── package.json
+├── package-lock.json
+└── server.js
 ```
 
 ---
@@ -112,10 +111,12 @@ app.listen(port, () => console.log(`Servidor escuchando en http://localhost:${po
 
 ---
 
-## ▶️ 5) Ejecutar y probar
+## ▶️ 5) Inicializar el proyeto, Instalar dependencias y  Ejecutar y probar
 
 ```bash
-node src/server.js
+npm init -y
+npm install express mongoose dotenv
+node server.js
 ```
 
 Deberías ver:
