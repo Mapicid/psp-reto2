@@ -89,6 +89,44 @@ db.usuarios.deleteOne({ nombre: "Jon" });
 - Asegúrate de que la base de datos (psp_reto2) tenga al menos un documento; de lo contrario, no aparecerá en Atlas.  
 - Puedes explorar y editar documentos directamente desde la barra lateral de MongoDB en VS Code.
 
+  # 🧩 Cómo crear y usar un Playground de MongoDB en VS Code
+
+## 1️⃣ Abre VS Code  
+Ya tienes la extensión de **MongoDB for VS Code** instalada, perfecto.  
+
+## 2️⃣ Accede al icono de MongoDB  
+En la barra lateral izquierda, haz clic en el icono de la **hoja verde** (MongoDB).
+
+## 3️⃣ Crea un nuevo Playground  
+En la parte superior, haz clic en **"Create Playground"**  
+👉 (o usa **Ctrl + Shift + P** → busca *MongoDB: Create Playground*).
+
+## 4️⃣ Guarda el archivo  
+Se abrirá un archivo nuevo con nombre tipo:  
+**mongodb.playground.mongodb**  
+Puedes guardarlo con otro nombre, por ejemplo:  
+**consultas.mongodb**
+
+## 5️⃣ Borra el contenido y pega este código
+```javascript
+use("psp_reto2");
+
+// Insertar un documento
+db.usuarios.insertOne({ nombre: "Helena", correo: "helena@mail.com" });
+
+// Listar todos los documentos
+db.usuarios.find();
+
+// Actualizar un documento
+db.usuarios.updateOne(
+  { nombre: "Helena" },
+  { $set: { correo: "nuevo@mail.com" } }
+);
+
+// Eliminar un documento
+db.usuarios.deleteOne({ nombre: "Helena" });
+
+
 ---
 
 ✅ Listo para practicar consultas directamente desde VS Code sin salir del entorno de desarrollo.
