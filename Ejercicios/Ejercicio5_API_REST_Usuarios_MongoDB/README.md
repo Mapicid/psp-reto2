@@ -223,10 +223,10 @@ Extra (opcional): Agrega validación de campos (por ejemplo, verificar formato d
 
 ## 🧩 Ejecución del proyecto
 🔹 Inicializa npm
-npm init -y
+**`npm init -y`**
 
 🔹 Instala las dependencias necesarias
-npm install express mongodb dotenv cors
+**`npm install express mongodb dotenv cors`**
 
 🔹 Crea el archivo .env con tus credenciales de MongoDB Atlas
 
@@ -236,13 +236,13 @@ MONGODB_URI=mongodb+srv://usuario:contraseña@cluster0.mongodb.net/psp_reto2?ret
 PORT=3000
 
 🔹 Ejecuta el servidor
-node server.js
+**`node server.js`**
 
 
 ✅ Si todo está correcto, verás en la terminal:
 
 ✅ Colección inicializada con 3 usuarios
-🚀 Servidor en marcha: http://localhost:3000
+🚀 Servidor en marcha: **`http://localhost:3000`**
 
 💡 Consejo
 
