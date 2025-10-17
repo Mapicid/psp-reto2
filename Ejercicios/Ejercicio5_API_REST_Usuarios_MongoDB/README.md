@@ -39,7 +39,7 @@ tu-proyecto/
 ## 🖥️ Paso 2. Código principal (server.js)
 
 Copia este código en server.js:
-
+````
 // server.js
 // API REST básica con Express + MongoDB Atlas (colección: usuarios)
 
@@ -155,7 +155,7 @@ app.get('/', (req, res) => {
 });
 
 start();
-
+````
 ---
 
 ## 🚀 Paso 3. Ejecutar la API
