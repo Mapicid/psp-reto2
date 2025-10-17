@@ -40,7 +40,7 @@ tu-proyecto/
 ## 🖥️ Paso 2. Código principal (server.js)
 
 Copia este código en server.js:
-```
+```javascript
 // server.js
 // API REST básica con Express + MongoDB Atlas (colección: usuarios)
 
