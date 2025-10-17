@@ -16,7 +16,7 @@ Este proyecto conecta una API de **Node.js + Express** con **MongoDB Atlas** usa
 
 4. En el panel del cluster, pulsa **Connect → Connect your application** y copia la cadena de conexión (p. ej.):
    ```
-   mongodb+srv://tu_usuario:tu_contraseñaY@cluster0.zggmpkg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+   mongodb+srv://tu_usuario:tu_contraseñaY@cluster0.zggmpkg.mongodb.net/reto2-bd?retryWrites=true&w=majority&appName=Cluster0
    ```
 
 ---
