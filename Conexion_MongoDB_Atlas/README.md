@@ -8,30 +8,55 @@ Este proyecto conecta una API de **Node.js + Express** con **MongoDB Atlas** usa
 
 ## 🚀 1) Crear y configurar MongoDB Atlas
 
-1. Crea un **cluster Free (M0)** en Atlas.  
-2. En **Security → Network Access**, añade **Allow access from anywhere (0.0.0.0/0)**.  
-3. En **Security → Database Access**, crea el usuario de base de datos:  
-   - Usuario: `tu_usuario`  
-   - Contraseña: `tu_contraseña`  
-4. En el panel del cluster, pulsa **Connect → Connect your application** y copia la cadena de conexión (por ejemplo):  
+1. Crea un **cluster Free (M0)** en Atlas.
+2. En **Security → Network Access**, añade **Allow access from anywhere (0.0.0.0/0)**.
+3. En **Security → Database Access**, crea el usuario de base de datos (por ejemplo):
+   - Usuario: `mpdelcid`
+   - Contraseña: `296y.53Y`
 
+4. En el panel del cluster, pulsa **Connect → Connect your application** y copia la cadena de conexión (p. ej.):
+   ```
+   mongodb+srv://mpdelcid:296y.53Y@cluster0.zggmpkg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+   ```
 
 ---
 
 ## ⚙️ 2) Preparar el proyecto
 
-Ejecuta estos comandos en tu carpeta del proyecto:
-
 ```bash
 npm init -y
 npm install express mongoose dotenv
+```
 
-🔑 3) Variables de entorno
+Estructura sugerida:
+```
+.
+├─ src/
+│  └─ server.js
+├─ .env              # (NO subir a GitHub)
+├─ .env.example      # plantilla para el equipo
+├─ .gitignore
+└─ package.json
+```
 
-Crea un archivo .env (no se sube al repositorio) tomando como ejemplo .env.example:
+---
 
-4) Código del servidor (src/server.js)
+## 🔑 3) Variables de entorno
 
+Crea **.env** (no se sube al repo) tomando como ejemplo `.env.example`:
+
+```env
+MONGODB_URI=mongodb+srv://mpdelcid:296y.53Y@cluster0.zggmpkg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+PORT=3000
+```
+
+> Si cambias usuario/contraseña o el nombre del cluster, ajusta la URL.
+
+---
+
+## 🧩 4) Código del servidor (src/server.js)
+
+```js
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
@@ -83,15 +108,43 @@ app.delete('/usuarios/:id', async (req, res) => {
 
 // Iniciar servidor
 app.listen(port, () => console.log(`Servidor escuchando en http://localhost:${port}`));
+```
 
-▶️ 5) Ejecutar y probar
+---
+
+## ▶️ 5) Ejecutar y probar
+
+```bash
 node src/server.js
+```
 
-▶️ 6) Endpoints de prueba (Postman o Thunder Client)
-Método	Ruta	Descripción	Ejemplo cuerpo JSON
+Deberías ver:
+```
+✅ Conectado a MongoDB Atlas
+Servidor escuchando en http://localhost:3000
+```
 
-GET	/	Comprobar que el servidor funciona	—
-POST	/usuarios	Crear un nuevo usuario	{ "nombre": "Aitor", "correo": "aitor@correo.com" }
-GET	/usuarios	Listar todos los usuarios	—
-PUT	/usuarios/:id	Actualizar un usuario	{ "nombre": "Nora", "correo": "nora@correo.com" }
-DELETE	/usuarios/:id	Eliminar usuario	—
+### Endpoints de prueba (Thunder/Postman)
+- **POST** `http://localhost:3000/usuarios`
+  ```json
+  { "nombre": "Aitor", "correo": "aitor@correo.com" }
+  ```
+- **GET** `http://localhost:3000/usuarios`
+- **PUT** `http://localhost:3000/usuarios/:id`
+  ```json
+  { "nombre": "Nora", "correo": "nora@correo.com" }
+  ```
+- **DELETE** `http://localhost:3000/usuarios/:id`
+
+---
+
+## 🧯 Problemas comunes
+
+- Revisa **Network Access (0.0.0.0/0)** si cambia tu red.
+- Verifica usuario/contraseña de Atlas.
+- `.env` debe existir y contener `MONGODB_URI`.
+
+---
+
+**Reto 2 – PSP (Programación de Servicios y Procesos)**  
+**Autora:** María Pía del Cid
