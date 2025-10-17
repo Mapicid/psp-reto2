@@ -8,8 +8,9 @@ El objetivo es que comprendas cómo **Node.js + Express + MongoDB** trabajan jun
 
 ---
 
-## 🧱 Estructura del proyecto
+# 🧱 Estructura del proyecto
 
+```bash
 tu-proyecto/
 ├─ server.js
 ├─ .env
@@ -155,7 +156,7 @@ app.get('/', (req, res) => {
 });
 
 start();
-````
+```
 ---
 
 ## 🚀 Paso 3. Ejecutar la API
