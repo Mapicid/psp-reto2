@@ -48,9 +48,7 @@ psp-reto2/
 
 ---
 
-## 👩‍🏫 Autora
-
 **Maripi Del Cid**  
-Formadora del módulo de *Programación de Servicios y Procesos (PSP)*  
+Módulo: *Programación de Servicios y Procesos (PSP)*  
 Centro: **CEBANC**  
 📅 Curso 2025–2026
