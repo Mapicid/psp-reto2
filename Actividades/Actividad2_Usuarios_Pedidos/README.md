@@ -40,3 +40,24 @@ const pedidos = [
   { id: 3, usuarioId: 2, producto: "Monitor 24\"",      cantidad: 1 },
 ];
 
+## ⚙️ Rutas obligatorias
+
+### Endpoints principales de la API
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| **GET** | `/usuarios` | Devuelve la lista completa de usuarios. |
+| **GET** | `/usuarios/:id/pedidos` | Devuelve los pedidos de un usuario. |
+| **POST** | `/usuarios/:id/pedidos` | Crea un nuevo pedido para un usuario. |
+
+## 🧩 Rutas adicionales para practicar
+
+### Ampliación del ejercicio
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| **GET** | `/pedidos` | Devuelve la lista completa de pedidos. |
+| **GET** | `/pedidos/:id` | Devuelve un pedido específico por su ID. |
+| **DELETE** | `/usuarios/:id/pedidos/:idPedido` | Elimina un pedido concreto de un usuario. |
+| **PUT** *(opcional)* | `/usuarios/:id/pedidos/:idPedido` | Actualiza un pedido existente. |
+| **GET** *(extra)* | `/usuarios/:id/info` | Devuelve un resumen del usuario y su número total de pedidos. |
