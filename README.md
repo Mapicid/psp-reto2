@@ -36,7 +36,7 @@ psp-reto2/
 1. [Ficha 1 – Introducción a Node.js y Express](./Fichas/Ficha1_Introduccion_Node_Express.pdf)
 2. [Ficha 2 – Rutas en Express](./Fichas/Ficha2_Rutas_y_Respuestas_Express.pdf)
 3. [Ficha 3 – Concepto de CRUD](./Fichas/Ficha3_Concepto_CRUD.pdf)
-4. [Ficha 4 – Concepto de CRUD](./Fichas/Ficha3_Concepto_CRUD.pdf)
+4. [Ficha 4 – El objeto req en Express- Partes de una petición](./Ficha4_Objeto_req_Express.pdf)
 5. [Ficha 5 – CRUD Básico con Arrays](./Fichas/Ficha5_CRUD_Express_Array.pdf)
 
 ## 🧩 Actividades prácticas
