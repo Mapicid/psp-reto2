@@ -33,23 +33,22 @@ psp-reto2/
 ---
 
 ### 📘 Fichas de trabajo
-1. [Ficha 1 – Introducción a Node.js y Express](./Fichas/Ficha1_Introduccion_Node_Express.pdf)
-2. [Ficha 2 – Rutas en Express](./Fichas/Ficha2_Rutas_y_Respuestas_Express.pdf)
-3. [Ficha 3 – Concepto de CRUD](./Fichas/Ficha3_Concepto_CRUD.pdf)
-4. [Ficha 4 – El objeto req en Express- Partes de una petición](./Fichas/Ficha4_Objeto_req_Express.pdf)
-5. [Ficha 5 – CRUD Básico con Arrays](./Fichas/Ficha5_CRUD_Express_Array.pdf)
+
+1. [**Ficha 0 – Introducción a JavaScript**](./Fichas/Ficha0_Introduccion_a_JavaScript.pdf)  
+2. [**Ficha 1 – Introducción a Node.js y Express**](./Fichas/Ficha1_Introduccion_Node_Express.pdf)  
+3. [**Ficha 2 – Rutas en Express**](./Fichas/Ficha2_Rutas_y_Respuestas_Express.pdf)  
+4. [**Ficha 3 – Concepto de CRUD**](./Fichas/Ficha3_Concepto_CRUD.pdf)  
+5. [**Ficha 4 – El objeto req en Express y las partes de una petición HTTP**](./Fichas/Ficha4_Objeto_req_Express.pdf)
 
 ## 🧩 Actividades prácticas
-- [Actividad 01 – MiniAPI CRUD sin base de datos](./Actividades/Actividad01_MiniAPI/)
+- [Actividad 01 – MiniAPI CRUD sin base de datos](./Actividades/Actividad01_Mini_API/README.md)
 
 
 *(Se irán añadiendo nuevas fichas y ejercicios a medida que avance el reto.)*
 
 ---
 
-## 👩‍🏫 Autora
-
 **Maripi Del Cid**  
-Formadora del módulo de *Programación de Servicios y Procesos (PSP)*  
+Módulo: *Programación de Servicios y Procesos (PSP)*  
 Centro: **CEBANC**  
 📅 Curso 2025–2026
