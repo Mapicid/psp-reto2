@@ -49,12 +49,14 @@ A continuación se explican los principales métodos de arrays utilizados para i
 
 Añade un nuevo elemento al final del array.  
 Equivale a la operación CREATE (POST).
-
+```js
 let usuarios = ["Ane", "Aitor", "Marta"];
+
 usuarios.push("Sara");
 console.log(usuarios);
 
 Resultado:
+
 ["Ane", "Aitor", "Marta", "Sara"]
 
 ---
@@ -69,10 +71,12 @@ let usuarios = [
   { id: 2, nombre: "Aitor" },
   { id: 3, nombre: "Marta" }
 ];
+
 const usuario = usuarios.find(u => u.id === 2);
 console.log(usuario);
 
 Resultado:
+
 { id: 2, nombre: "Aitor" }
 
 ---
@@ -87,10 +91,12 @@ let usuarios = [
   { id: 2, nombre: "Aitor" },
   { id: 3, nombre: "Marta" }
 ];
+
 const filtrados = usuarios.filter(u => u.nombre === "Aitor");
 console.log(filtrados);
 
 Resultado:
+
 [
   { id: 1, nombre: "Aitor" },
   { id: 2, nombre: "Aitor" }
@@ -108,10 +114,12 @@ let usuarios = [
   { id: 2, nombre: "Aitor" },
   { id: 3, nombre: "Marta" }
 ];
+
 const index = usuarios.findIndex(u => u.id === 3);
 console.log(index);
 
 Resultado:
+
 2
 
 ---
@@ -122,8 +130,11 @@ Permite eliminar, reemplazar o insertar elementos en una posición concreta del 
 Equivale a DELETE (borrar) o UPDATE (reemplazar).
 
 let usuarios = ["Ane", "Aitor", "Marta"];
+
 usuarios.splice(1, 1); // elimina 1 elemento desde el índice 1
 console.log(usuarios);
 
 Resultado:
+
 ["Ane", "Marta"]
+
