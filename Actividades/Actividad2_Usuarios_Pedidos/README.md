@@ -34,7 +34,7 @@ const usuarios = [
   { id: 2, nombre: "Aitor", email: "aitor@example.com" },
 ];
 
-const pedidos = [
+let pedidos = [
   { id: 1, usuarioId: 1, producto: "Ratón inalámbrico", cantidad: 2 },
   { id: 2, usuarioId: 1, producto: "Teclado mecánico",  cantidad: 1 },
   { id: 3, usuarioId: 2, producto: "Monitor 24\"",      cantidad: 1 },
