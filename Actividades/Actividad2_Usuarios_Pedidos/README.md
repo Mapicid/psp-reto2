@@ -29,7 +29,7 @@ Cada **pedido** tendrá:
 Comienza con estos datos de ejemplo:
 
 ```js
-const usuarios = [
+let usuarios = [
   { id: 1, nombre: "Ane",   email: "ane@example.com" },
   { id: 2, nombre: "Aitor", email: "aitor@example.com" },
 ];
