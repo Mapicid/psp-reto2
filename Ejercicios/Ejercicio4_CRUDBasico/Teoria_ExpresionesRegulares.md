@@ -109,6 +109,54 @@ const nombreOk = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+$/.test(nombre);
 const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 ~~~
 
+## 💌 Validación de Email en JavaScript
+
+La siguiente expresión regular permite validar si un texto tiene formato de **correo electrónico** válido:
+
+~~~js
+const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+~~~
+
+---
+
+### 🧩 Desglose paso a paso
+
+| Parte del patrón | Significado | Ejemplo |
+|------------------|--------------|----------|
+| `^` | Indica el **inicio** de la cadena | El texto debe empezar aquí |
+| `[^\s@]+` | Uno o más caracteres que **no sean espacios ni @** | “maria”, “juan.lopez”, “user123” |
+| `@` | El carácter arroba obligatorio | separa el nombre del dominio |
+| `[^\s@]+` | Uno o más caracteres que no sean espacio ni @ | “mail”, “empresa”, “dominio” |
+| `\.` | Un punto literal `.` (el `\` lo hace literal) | separa dominio y extensión |
+| `[^\s@]+` | Uno o más caracteres válidos (extensión) | “com”, “es”, “org” |
+| `$` | Indica el **final** de la cadena | Evita que haya texto extra después |
+
+---
+
+### ✅ Ejemplos válidos
+- `maria@mail.com`  
+- `juan.lopez@empresa.es`  
+- `user123@dominio.co.uk`
+
+---
+
+### ❌ Ejemplos no válidos
+| Email | Motivo |
+|--------|--------|
+| `maria@mail` | Falta el punto y la extensión |
+| `maria@@mail.com` | Tiene dos arrobas |
+| `maria mail.com` | Tiene un espacio |
+| `@mail.com` | Falta la parte antes de la arroba |
+
+---
+
+### 💡 Nota
+Validar emails perfectamente con una sola expresión regular es muy complejo (el estándar permite direcciones con símbolos raros, comillas o corchetes).  
+Por eso este patrón se usa ampliamente por ser **simple, legible y suficientemente fiable** para la mayoría de formularios o APIs.
+
+---
+
+
 ### ✅ Edad (número ≥ 0)
 ~~~js
 const edadOk = typeof edad === 'number' && Number.isFinite(edad) && edad >= 0;
