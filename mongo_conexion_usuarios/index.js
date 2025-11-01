@@ -11,11 +11,11 @@
 */
 
 // ------------------------------------------------------
-// 1️⃣ Configuramos Express (solo como base, no se usa aquí)
+// 1️⃣ Configuración de Express (no usada en esta práctica)
 // ------------------------------------------------------
-const express = require('express');
-const app = express();
-const port = 3000;  
+// const express = require('express');
+// const app = express();
+// const port = 3000;  
 // app.use(express.json()); // ← Úsalo cuando recibas JSON por POST/PUT
 
 // ------------------------------------------------------
