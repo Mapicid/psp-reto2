@@ -1,5 +1,5 @@
 // ejemplo4_crudUsuarios_validado.js
-// Versión mejorada del CRUD con validaciones y generación automática de IDs
+// Versión mejorada del CRUD con validaciones, acumulación de errores y generación automática de IDs
 
 const express = require('express');
 const app = express();
@@ -18,8 +18,44 @@ let usuarios = [
 const nextId = () =>
   usuarios.length ? Math.max(...usuarios.map(u => u.id)) + 1 : 1;
 
-// 🧩 Expresión regular para validar emails
+// 🧩 Expresiones regulares para validaciones
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const nameRegex = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+$/;
+
+// 🧠 Función reutilizable para validar usuarios
+function validarUsuario({ nombre, email, edad }) {
+  const errores = [];
+
+  // Campos obligatorios (ojo: edad=0 es válido)
+  if (nombre === undefined || email === undefined || edad === undefined) {
+    errores.push("Faltan datos obligatorios (nombre, email o edad)");
+  }
+
+  // Validación del nombre
+  if (nombre !== undefined) {
+    if (typeof nombre !== 'string' || nombre.trim() === '') {
+      errores.push("El nombre no puede estar vacío");
+    } else if (!nameRegex.test(nombre)) {
+      errores.push("El nombre solo puede contener letras y espacios");
+    }
+  }
+
+  // Validación del email
+  if (email !== undefined) {
+    if (!emailRegex.test(email)) {
+      errores.push("Formato de email inválido");
+    }
+  }
+
+  // Validación de la edad
+  if (edad !== undefined) {
+    if (typeof edad !== 'number' || !Number.isFinite(edad) || edad < 0) {
+      errores.push("La edad debe ser un número mayor o igual a 0");
+    }
+  }
+
+  return errores;
+}
 
 // 1️⃣ Obtener todos los usuarios
 app.get('/usuarios', (req, res) => {
@@ -38,28 +74,15 @@ app.get('/usuarios/:id', (req, res) => {
   }
 });
 
-// 3️⃣ Crear un nuevo usuario (con validaciones)
+// 3️⃣ Crear un nuevo usuario (con validaciones acumuladas)
 app.post('/usuarios', (req, res) => {
   const { nombre, email, edad } = req.body;
 
-  // 🔍 Validaciones
-  if (!nombre || !email || edad === undefined) {
-    return res.status(400).json({ error: "Faltan datos obligatorios (nombre, email o edad)" });
+  const errores = validarUsuario({ nombre, email, edad });
+  if (errores.length > 0) {
+    return res.status(400).json({ errores });
   }
 
-  if (typeof nombre !== 'string' || nombre.trim() === '') {
-    return res.status(400).json({ error: "El nombre no puede estar vacío" });
-  }
-
-  if (!emailRegex.test(email)) {
-    return res.status(400).json({ error: "Formato de email inválido" });
-  }
-
-  if (typeof edad !== 'number' || Number.isNaN(edad) || edad < 0) {
-    return res.status(400).json({ error: "La edad debe ser un número mayor o igual a 0" });
-  }
-
-  // 🧱 Crear usuario con ID automático
   const nuevoUsuario = {
     id: nextId(),
     nombre: nombre.trim(),
@@ -74,43 +97,20 @@ app.post('/usuarios', (req, res) => {
   });
 });
 
-// 🧪 Ejemplo de JSON para probar POST
-/*
-{
-  "nombre": "Lucía",
-  "email": "lucia@mail.com",
-  "edad": 22
-}
-*/
-
-// 4️⃣ Actualizar un usuario existente (con validaciones)
+// 4️⃣ Actualizar un usuario existente (con validaciones acumuladas)
 app.put('/usuarios/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const { nombre, email, edad } = req.body;
   const usuario = usuarios.find(u => u.id === id);
-
   if (!usuario) {
     return res.status(404).json({ error: "Usuario no encontrado" });
   }
 
-  // 🔍 Validaciones
-  if (!nombre || !email || edad === undefined) {
-    return res.status(400).json({ error: "Faltan datos obligatorios (nombre, email o edad)" });
+  const { nombre, email, edad } = req.body;
+  const errores = validarUsuario({ nombre, email, edad });
+  if (errores.length > 0) {
+    return res.status(400).json({ errores });
   }
 
-  if (typeof nombre !== 'string' || nombre.trim() === '') {
-    return res.status(400).json({ error: "El nombre no puede estar vacío" });
-  }
-
-  if (!emailRegex.test(email)) {
-    return res.status(400).json({ error: "Formato de email inválido" });
-  }
-
-  if (typeof edad !== 'number' || Number.isNaN(edad) || edad < 0) {
-    return res.status(400).json({ error: "La edad debe ser un número mayor o igual a 0" });
-  }
-
-  // 🧱 Actualización
   usuario.nombre = nombre.trim();
   usuario.email = email.toLowerCase();
   usuario.edad = edad;
@@ -138,4 +138,3 @@ app.delete('/usuarios/:id', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor en marcha → http://localhost:${PORT}`);
 });
-
