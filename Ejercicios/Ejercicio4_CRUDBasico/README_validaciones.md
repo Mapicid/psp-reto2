@@ -65,7 +65,7 @@ Si alguno de los datos no cumple los requisitos, la API devolverá **400 Bad Req
 ---
 
 ## 💡 Ejemplo de validación en el POST
-
+```js
 `app.post('/usuarios', (req, res) => {
   const { nombre, email, edad } = req.body;
 
