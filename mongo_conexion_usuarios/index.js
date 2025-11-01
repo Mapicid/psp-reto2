@@ -1,10 +1,13 @@
-/*
- 🧩 Ejemplo: Conexión a MongoDB y operaciones CRUD básicas
- ----------------------------------------------------------
- Cuando una tarea tarda un tiempo (como acceder a una base de datos o leer un archivo)
- y quieres que el programa espere su resultado antes de seguir,
- debes ponerla dentro de una función asíncrona (async)
- y usar await para que espere hasta que termine.
+/*🧩 Ejemplo: Conexión a MongoDB y operaciones CRUD básicas (sin Express)
+ ----------------------------------------------------------------------
+ Este ejemplo muestra cómo conectarse a una base de datos MongoDB local
+ y realizar las operaciones básicas CRUD (Create, Read, Update, Delete)
+ usando el driver oficial de MongoDB y funciones asíncronas (async/await).
+
+ 💡 Nota:
+ No utilizamos Express en este caso. El objetivo es comprender cómo funcionan
+ las promesas y el control del flujo asíncrono en Node.js cuando se trabaja
+ directamente con una base de datos.
 */
 
 // ------------------------------------------------------
