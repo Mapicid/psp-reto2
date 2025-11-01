@@ -1,98 +1,81 @@
-# 🍃 Guía actualizada: Instalación y uso de MongoDB Compass (2025)
+# 🍃 Guía práctica: MongoDB Compass y creación de colecciones relacionadas (2025)
 
 ## 🎯 Objetivo
-Instalar **MongoDB Community Server** y **MongoDB Compass**, conectarse al servidor local y crear las primeras colecciones (`clientes`, `productos`, `pedidos`) con sus relaciones básicas. Esta guía está actualizada y puede seguirse sin necesidad de Docker ni configuraciones adicionales.
+Instalar y usar **MongoDB Compass** para crear una base de datos local con tres colecciones (`clientes`, `productos`, `pedidos`), introducir documentos en formato JSON y establecer relaciones entre ellas mediante los campos `ObjectId`.
 
 ---
 
-## 🧩 1. Descargar MongoDB
+## 🧩 1. Descargar e instalar MongoDB
 1. Accede a la página oficial:  
    👉 [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community)
-2. En la sección **“Version”**, elige la versión estable más reciente (Windows/macOS/Linux).
-3. Deja seleccionadas las opciones por defecto y haz clic en **Download**.
-4. Ejecuta el instalador descargado.
-5. En el asistente de instalación:
-   - Pulsa **Next**.
-   - Elige **Complete** (instalación completa).
-   - Mantén **todas las opciones por defecto**.
-6. Espera a que finalice la instalación. Al terminar, tendrás instalados:
-   - El servidor **MongoDB** (servicio `mongod`).
-   - El shell de comandos **mongosh**.
-   - La interfaz gráfica **MongoDB Compass**.
+2. Descarga **MongoDB Community Server** (última versión).
+3. Durante la instalación:
+   - Elige **Complete**.
+   - Mantén todas las opciones por defecto.
+4. Se instalarán:
+   - **MongoDB Server** (servicio `mongod`)
+   - **MongoDB Shell (mongosh)**
+   - **MongoDB Compass**
 
 ---
 
-## ⚙️ 2. Verificar que MongoDB funciona
+## ⚙️ 2. Verificar que MongoDB está funcionando
 ### En Windows
-1. Abre **PowerShell** o **CMD**.  
-2. Escribe: `net start MongoDB`  
-   Si el servicio ya está en ejecución, verás el mensaje:  
-   **“The MongoDB service is already running”**
+Abre PowerShell o CMD y ejecuta:
 
-### En Linux o macOS
-- En Linux: `sudo systemctl status mongod`  
-- En macOS (Homebrew): `brew services list`
+`net start MongoDB`
 
-Si todo está correcto, ya puedes abrir **MongoDB Compass**.
+Si ya está iniciado, aparecerá:  
+**The MongoDB service is already running**
 
 ---
 
-## 🚀 3. Primeros pasos en MongoDB Compass
-
-### Paso 1: Abrir Compass
-Busca el icono de **MongoDB Compass** (hoja verde 🍃) en el escritorio o el menú de inicio y ejecútalo.
-
-### Paso 2: Conectarse al servidor local
-1. En la pantalla inicial, verás un campo de conexión vacío.  
-2. Escribe esta dirección: `mongodb://127.0.0.1:27017`  
-3. Pulsa **Connect**.  
-4. Si la conexión es correcta, verás las bases de datos del sistema:
-   - `admin`
-   - `config`
-   - `local`
-
-✅ Esto confirma que el servidor MongoDB está funcionando correctamente en tu equipo.
+## 🚀 3. Abrir MongoDB Compass
+1. Busca el icono **MongoDB Compass** en el escritorio.
+2. Al abrirlo, verás el campo **Connection String**.  
+   Escribe:  
+   `mongodb://127.0.0.1:27017`
+3. Pulsa **Connect**.
+4. Si todo va bien, verás bases de datos del sistema (`admin`, `config`, `local`).
 
 ---
 
-## 🧱 4. Crear tu propia base de datos
+## 🧱 4. Crear tu base de datos
 1. Pulsa **Create Database**.  
-2. Escribe:  
+2. Introduce:  
    - **Database Name:** `mibase`  
-   - **Collection Name:** `clientes`  
-3. Pulsa **Create Database**.  
+   - **Collection Name:** `clientes`
+3. Pulsa **Create Database**.
 
-Tu nueva base de datos aparecerá en el panel izquierdo con la colección `clientes`.
+Tu base de datos `mibase` aparece en el panel izquierdo.
 
 ---
 
-## 🧩 5. Crear más colecciones
-Vamos a crear otras colecciones relacionadas para practicar:  
-1. Haz clic en el icono **“+”** junto a `mibase` para crear una nueva colección llamada `productos`.  
-2. Repite el proceso para crear otra colección llamada `pedidos`.  
-
-Ahora tu base de datos `mibase` tendrá tres colecciones:
-- `clientes`
+## 🧩 5. Crear colecciones adicionales
+Crea otras dos colecciones dentro de `mibase`:
 - `productos`
 - `pedidos`
+
+Haz clic en **+** junto al nombre de la base de datos y elige **Create Collection**.
 
 ---
 
 ## ✍️ 6. Insertar documentos manualmente
 
 ### A. Insertar clientes
-1. Entra en la colección **clientes**.  
+1. Abre la colección **clientes**.  
 2. Pulsa **Insert Document**.  
-3. Escribe el siguiente ejemplo en formato JSON:
+3. Escribe lo siguiente en formato JSON:
 
 {
-"nombre": "María López",
-"email": "maria@mail.com",
-"telefono": "678123456"
+  "nombre": "María López",
+  "email": "maria@mail.com",
+  "telefono": "678123456"
 }
 
-4. Pulsa **Insert**.  
-5. MongoDB añadirá automáticamente un campo `_id` (identificador único del documento).  
+Pulsa **Insert**.
+
+MongoDB añadirá automáticamente un campo `_id` (identificador único del documento).  
 Puedes cambiar de vista entre **Table View** (tabla) y **JSON View** (texto).
 
 ---
@@ -102,9 +85,9 @@ Puedes cambiar de vista entre **Table View** (tabla) y **JSON View** (texto).
 2. Inserta un documento como:
 
 {
-"nombre": "Teclado inalámbrico",
-"precio": 29.99,
-"stock": 50
+  "nombre": "Teclado inalámbrico",
+  "precio": 29.99,
+  "stock": 50
 }
 
 ---
@@ -114,20 +97,20 @@ Puedes cambiar de vista entre **Table View** (tabla) y **JSON View** (texto).
 2. Inserta un documento con un campo `idCliente` que apunte al `_id` del cliente anterior:
 
 {
-"fecha": "2025-11-01",
-"total": 29.99,
-"idCliente": "ObjectId_que_copies_de_clientes"
+  "fecha": "2025-11-01",
+  "total": 29.99,
+  "idCliente": "ObjectId_que_copies_de_clientes"
 }
 
-3. Para copiar el `_id` del cliente:
-- Abre la colección `clientes`.  
-- Copia el valor de `_id` (por ejemplo `"6724fc3a9d3e0b16c95a1c2b"`).  
-- Pégalo en `idCliente` del pedido, así:
+Para copiar el `_id` del cliente:  
+Abre la colección `clientes`.  
+Copia el valor de `_id` (por ejemplo `"6724fc3a9d3e0b16c95a1c2b"`).  
+Pégalo en `idCliente` del pedido, así:
 
 {
-"fecha": "2025-11-01",
-"total": 29.99,
-"idCliente": ObjectId("6724fc3a9d3e0b16c95a1c2b")
+  "fecha": "2025-11-01",
+  "total": 29.99,
+  "idCliente": ObjectId("6724fc3a9d3e0b16c95a1c2b")
 }
 
 MongoDB reconocerá el `ObjectId` como una referencia válida.
@@ -140,23 +123,25 @@ MongoDB reconocerá el `ObjectId` como una referencia válida.
 Abre la colección `pedidos` y edita el documento para añadir un campo con el id del producto:
 
 {
-"fecha": "2025-11-01",
-"total": 29.99,
-"idCliente": ObjectId("6724fc3a9d3e0b16c95a1c2b"),
-"idProducto": ObjectId("6724fd5e3a7d2b09f84d1b9a")
+  "fecha": "2025-11-01",
+  "total": 29.99,
+  "idCliente": ObjectId("6724fc3a9d3e0b16c95a1c2b"),
+  "idProducto": ObjectId("6724fd5e3a7d2b09f84d1b9a")
 }
+
+---
 
 ### B. Añadir idPedido en clientes
 Ve a la colección `clientes` y edita el documento para añadir un campo que haga referencia al pedido:
 
 {
-"nombre": "María López",
-"email": "maria@mail.com",
-"telefono": "678123456",
-"idPedido": ObjectId("6724fef93a7d2b09f84d1b9b")
+  "nombre": "María López",
+  "email": "maria@mail.com",
+  "telefono": "678123456",
+  "idPedido": ObjectId("6724fef93a7d2b09f84d1b9b")
 }
 
-De esta forma simulas las relaciones entre colecciones, aunque MongoDB **no usa claves foráneas** ni relaciones fijas como las bases de datos relacionales.
+De esta forma simulas las relaciones entre colecciones, aunque MongoDB no usa claves foráneas ni relaciones fijas como las bases de datos relacionales.
 
 ---
 
@@ -184,13 +169,13 @@ De esta forma simulas las relaciones entre colecciones, aunque MongoDB **no usa 
 
 ---
 
-## 🧪 10. Actividad práctica sugerida
+## 🧪 10. Actividad práctica
 1. Crea la base de datos `mibase` con las colecciones `clientes`, `productos` y `pedidos`.  
 2. Inserta al menos **2 documentos** en cada colección.  
 3. Relaciona cada pedido con su cliente y producto mediante los campos `idCliente` e `idProducto`.  
 4. Añade en `clientes` el campo `idPedido` correspondiente.  
 5. Haz una captura de pantalla mostrando tus tres colecciones y los documentos relacionados.  
-6. Entrega el documento con tus capturas y una breve descripción del proceso.
+6. Entrega un breve informe explicando el proceso y las capturas de pantalla.
 
 ---
 
@@ -200,4 +185,4 @@ De esta forma simulas las relaciones entre colecciones, aunque MongoDB **no usa 
 - ¿Cada documento tiene su `_id` y relaciones correctas?  
 - ¿Guardaste las capturas para el informe?  
 
-Si todo es **sí**, ¡enhorabuena! Tu entorno de MongoDB local está funcionando perfectamente y ya entiendes los conceptos fundamentales de colecciones, documentos y relaciones básicas. 🎉
+Si todo es **sí**, ¡enhorabuena! Has completado correctamente la configuración y práctica con MongoDB Compass. 🎉
