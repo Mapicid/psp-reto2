@@ -91,7 +91,7 @@ Si alguno de los datos no cumple los requisitos, la API devolverá **400 Bad Req
   usuarios.push(nuevoUsuario);
   res.status(201).json({ mensaje: 'Usuario creado correctamente', usuario: nuevoUsuario });
 });`
-**
+```
 ---
 
 ## 🧩 Recomendaciones técnicas
