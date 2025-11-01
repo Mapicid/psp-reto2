@@ -43,3 +43,8 @@ El servidor deberá permitir consultar, añadir, modificar y eliminar usuarios u
 - [📘 Teoría – Métodos de Arrays en JavaScript](./Teoria_MetodosArrays.md)
 - [📘 Teoría – Expresiones Regulares](./Teoria_ExpresionesRegulares.md)
 
+---
+## 🔗 Ampliación del ejercicio
+Si ya has completado el CRUD básico, continúa con la versión mejorada:
+👉 [🧩 Ejercicio 4.1 – CRUD con Validaciones e IDs Automáticos](./README_validaciones.md)
+
