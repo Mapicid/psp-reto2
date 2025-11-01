@@ -66,13 +66,13 @@ Haz clic en **+** junto al nombre de la base de datos y elige **Create Collectio
 1. Abre la colección **clientes**.  
 2. Pulsa **Insert Document**.  
 3. Escribe lo siguiente en formato JSON:
-
+```json
 {
   "nombre": "María López",
   "email": "maria@mail.com",
   "telefono": "678123456"
 }
-
+```
 Pulsa **Insert**.
 
 MongoDB añadirá automáticamente un campo `_id` (identificador único del documento).  
@@ -83,36 +83,37 @@ Puedes cambiar de vista entre **Table View** (tabla) y **JSON View** (texto).
 ### B. Insertar productos
 1. Abre la colección **productos**.  
 2. Inserta un documento como:
-
+```json
 {
   "nombre": "Teclado inalámbrico",
   "precio": 29.99,
   "stock": 50
 }
-
+```
 ---
 
 ### C. Insertar pedidos
 1. Abre la colección **pedidos**.  
 2. Inserta un documento con un campo `idCliente` que apunte al `_id` del cliente anterior:
-
+```json
 {
   "fecha": "2025-11-01",
   "total": 29.99,
   "idCliente": "ObjectId_que_copies_de_clientes"
 }
+```
 
 Para copiar el `_id` del cliente:  
 Abre la colección `clientes`.  
 Copia el valor de `_id` (por ejemplo `"6724fc3a9d3e0b16c95a1c2b"`).  
 Pégalo en `idCliente` del pedido, así:
-
+```json
 {
   "fecha": "2025-11-01",
   "total": 29.99,
   "idCliente": ObjectId("6724fc3a9d3e0b16c95a1c2b")
 }
-
+```
 MongoDB reconocerá el `ObjectId` como una referencia válida.
 
 ---
@@ -121,26 +122,26 @@ MongoDB reconocerá el `ObjectId` como una referencia válida.
 
 ### A. Añadir idProducto en pedidos
 Abre la colección `pedidos` y edita el documento para añadir un campo con el id del producto:
-
+```json
 {
   "fecha": "2025-11-01",
   "total": 29.99,
   "idCliente": ObjectId("6724fc3a9d3e0b16c95a1c2b"),
   "idProducto": ObjectId("6724fd5e3a7d2b09f84d1b9a")
 }
-
+```
 ---
 
 ### B. Añadir idPedido en clientes
 Ve a la colección `clientes` y edita el documento para añadir un campo que haga referencia al pedido:
-
+```json
 {
   "nombre": "María López",
   "email": "maria@mail.com",
   "telefono": "678123456",
   "idPedido": ObjectId("6724fef93a7d2b09f84d1b9b")
 }
-
+```
 De esta forma simulas las relaciones entre colecciones, aunque MongoDB no usa claves foráneas ni relaciones fijas como las bases de datos relacionales.
 
 ---
