@@ -43,3 +43,64 @@ El servidor incluirá las siguientes rutas:
 
 ---
 
+## 🧪 4. Ejecución
+Ejecuta el servidor desde la terminal con:
+
+node server.js
+
+Si todo está correcto, verás:
+
+✅ Conectado a MongoDB  
+🚀 API escuchando en http://localhost:3000
+
+---
+
+## 🔍 5. Pruebas con Thunder Client o Postman
+**GET** → `http://localhost:3000/usuarios`  
+**GET (por id)** → `http://localhost:3000/usuarios/<id>`  
+**POST** → `http://localhost:3000/usuarios`  
+
+Ejemplo de cuerpo JSON:
+```json
+{  
+  "nombre": "Lucía Gómez",  
+  "email": "lucia@mail.com",  
+  "edad": 25  
+}
+```
+**PUT** → `http://localhost:3000/usuarios/<id>`  
+
+Ejemplo de actualización:
+```json
+{  
+  "email": "lucia.nueva@mail.com"  
+}
+```
+**DELETE** → `http://localhost:3000/usuarios/<id>`
+
+---
+
+## 💡 Notas finales
+- La base de datos y la colección se crean automáticamente al insertar el primer documento.  
+- Si MongoDB no está iniciado, ejecuta `net start MongoDB` en Windows antes de lanzar el servidor.  
+- Puedes consultar los datos creados visualmente desde **MongoDB Compass**.  
+- Este ejercicio continúa el aprendizaje del CRUD básico y prepara el terreno para conectar con **Mongoose** o con **frontends** más adelante.
+
+---
+
+## 🧠 Consejos y buenas prácticas
+- Usa nombres de variables descriptivos para que tu código sea fácil de entender.  
+- Cada vez que modifiques el código, **reinicia el servidor** para aplicar los cambios.  
+- Si recibes un error en consola, lee el mensaje completo: casi siempre indica exactamente en qué línea está el problema.  
+- Puedes instalar la herramienta **nodemon** para que el servidor se reinicie automáticamente cada vez que guardes:  
+  npm install -g nodemon  
+  nodemon server.js  
+- Recuerda probar cada ruta de forma individual y revisar las respuestas en formato JSON.  
+- Si obtienes errores de validación, revisa las expresiones regulares y los nombres de campos.  
+- Evita duplicar correos electrónicos: más adelante podrás añadir una validación de unicidad.
+
+---
+
+## 🧩 Próximo paso
+En el siguiente ejercicio, puedes migrar este código a **Mongoose** para simplificar las validaciones, definir un **esquema de usuario** y añadir mensajes de error automáticos.  
+Esto permitirá tener un control más limpio y estructurado de los datos en MongoDB.
