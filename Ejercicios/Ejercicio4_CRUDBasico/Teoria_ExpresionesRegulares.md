@@ -104,7 +104,7 @@ console.log(patron.test(texto)); // true
 const nombreOk = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]+$/.test(nombre);
 ~~~
 
-### ✅ Validación de Email en javaScript (patrón práctico, no perfecto)
+### ✅ Validación de Email en JavaScript (patrón práctico, no perfecto)
 La siguiente expresión regular permite validar si un texto tiene formato de **correo electrónico** válido:
 ~~~js
 const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
