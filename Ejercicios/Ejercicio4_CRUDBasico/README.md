@@ -40,8 +40,10 @@ El servidor deberá permitir consultar, añadir, modificar y eliminar usuarios u
   ];
 
 ## 💡 Recursos complementarios
-- [📘 Teoría – Métodos de Arrays en JavaScript](./Teoria_MetodosArrays.md)
-- [📘 Teoría – Expresiones Regulares](./Teoria_ExpresionesRegulares.md)
+
+- 📘 [Teoría – Métodos de Arrays en JavaScript](Teoria_MetodosArrays.md)  
+- 📘 [Teoría – Expresiones Regulares](Teoria_ExpresionesRegulares.md)  
+- 📘 [Teoría – Códigos de Estado HTTP](Teoria_CodigosEstadoHTTP.md)
 
 ---
 ## 🔗 Ampliación del ejercicio
