@@ -22,7 +22,9 @@ La práctica te permitirá entender cómo funcionan las promesas y el control de
 ### 2️⃣ Inicializar el proyecto Node
 Abre la carpeta en Visual Studio Code y ejecuta en la terminal los siguientes comandos en orden:  
 `npm init -y`  
-`npm install mongodb express`
+`npm install mongodb`
+Nota: En esta práctica no necesitas instalar Express.
+Solo trabajaremos con Node.js y el driver oficial de MongoDB, ya que el objetivo es conectarse directamente a la base de datos y realizar operaciones CRUD desde la consola, sin crear todavía un servidor web ni rutas HTTP.
 
 ---
 
