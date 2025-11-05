@@ -75,6 +75,21 @@ Si todo funciona correctamente, verás en la consola algo similar a:
 ` Borrado: 1`  
 `🔒 Conexión cerrada`
 
+## 7️⃣ Más información y recursos
+
+Si quieres profundizar en cómo funcionan las operaciones **CRUD** (Create, Read, Update, Delete) con MongoDB y ver más ejemplos de código con el **driver oficial de Node.js**, puedes consultar la documentación oficial en el siguiente enlace:
+
+📚 [https://www.mongodb.com/docs/drivers/node/current/crud/insert/](https://www.mongodb.com/docs/drivers/node/current/crud/insert/)
+
+En esta página encontrarás ejemplos detallados de:
+- 🟢 **Inserción** de uno o varios documentos (`insertOne`, `insertMany`)
+- 🔵 **Lectura** de datos (`find`, `findOne`)
+- 🟣 **Actualización** (`updateOne`, `updateMany`)
+- 🔴 **Eliminación** (`deleteOne`, `deleteMany`)
+- ⚙️ **Buenas prácticas** de manejo de conexiones
+
+> 💡 *Consejo:* Guarda este enlace como referencia para tus próximos ejercicios con MongoDB y Node.js.
+
 7️⃣ **Más información y recursos**
 
 Si quieres profundizar en cómo funcionan las operaciones **CRUD** (Create, Read, Update, Delete) con MongoDB y ver más ejemplos de código con el **driver oficial de Node.js**, puedes consultar la documentación oficial en el siguiente enlace:
