@@ -65,7 +65,7 @@ Cuando el script se ejecute, insertará un documento como este:
 y lo actualizará posteriormente a:  
 `{ "nombre": "Ana", "email": "ana@ejemplo.net" }` 
 
-6️⃣ **Ejecución**
+### 6️⃣ **Ejecución**
 Ejecuta el archivo con:  
 `node index.js`  
 Si todo funciona correctamente, verás en la consola algo similar a:  
@@ -76,7 +76,7 @@ Si todo funciona correctamente, verás en la consola algo similar a:
 ` Borrado: 1`  
 `🔒 Conexión cerrada`
 
-7️⃣ **Más información y recursos**
+### 7️⃣ **Más información y recursos**
 
 Si quieres profundizar en cómo funcionan las operaciones **CRUD** (Create, Read, Update, Delete) con MongoDB y ver más ejemplos de código con el **driver oficial de Node.js**, puedes consultar la documentación oficial en el siguiente enlace:
 
