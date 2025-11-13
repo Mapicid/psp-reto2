@@ -15,6 +15,7 @@ proyecto-api/
 ---
 
 ## 2. Archivo `index.js`
+```js
 
 const express = require('express');  
 const app = express();  
@@ -32,10 +33,11 @@ app.listen(PORT, () => {
  console.log(`Servidor funcionando en http://localhost:${PORT}`);  
 });
 
+```
 ---
 
 ## 3. Archivo `rutas/usuarios.rutas.js`
-
+```js
 const express = require('express');  
 const router = express.Router();
 
@@ -67,11 +69,11 @@ router.get('/:id', (req, res) => {
 });
 
 module.exports = router;
-
+```
 ---
 
 ## 4. Archivo `rutas/productos.rutas.js`
-
+```js
 const express = require('express');  
 const router = express.Router();
 
@@ -103,7 +105,7 @@ router.get('/:id', (req, res) => {
 });
 
 module.exports = router;
-
+```
 ---
 
 ## 5. ¿Cómo funciona todo junto?
